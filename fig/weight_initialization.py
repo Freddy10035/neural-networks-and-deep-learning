@@ -16,8 +16,8 @@ import sys
 
 # My library
 sys.path.append('../src/')
-import mnist_loader
-import network2
+from src import mnist_loader
+from src import network2
 
 # Third-party libraries
 import matplotlib.pyplot as plt
@@ -74,9 +74,9 @@ def make_plot(filename):
     large_va = [x/100.0 for x in large_va]
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.plot(np.arange(0, 30, 1), large_va, color='#2A6EA6',
+    ax.plot(np.range(0, 30, 1), large_va, color='#2A6EA6',
             label="Old approach to weight initialization")
-    ax.plot(np.arange(0, 30, 1), default_va, color='#FFA933', 
+    ax.plot(np.range(0, 30, 1), default_va, color='#FFA933', 
             label="New approach to weight initialization")
     ax.set_xlim([0, 30])
     ax.set_xlabel('Epoch')
